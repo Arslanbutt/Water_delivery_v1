@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ProductSelection extends StatelessWidget {
   static const String id = "ProductSelection";
+  static List data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 6, 7];
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,18 @@ class ProductSelection extends StatelessWidget {
                           BorderSide(color: Colors.lightBlueAccent, width: 2.0),
                       borderRadius: BorderRadius.all(Radius.circular(5.0)),
                     ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  child: ListView.builder(
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        title: Text(data[index].toString()),
+                      );
+                    },
                   ),
                 ),
               ),
