@@ -47,13 +47,60 @@ class ProductSelection extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 20.0,
+              ),
               Expanded(
                 child: Container(
                   child: ListView.builder(
                     itemCount: data.length,
                     itemBuilder: (context, index) {
-                      return ListTile(
-                        title: Text(data[index].toString()),
+                      return Container(
+                        padding: EdgeInsets.only(bottom: 20.0),
+                        height: 200,
+                        child: Card(
+                          elevation: 3,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('Produt Name'),
+                                    Icon(Icons.message),
+                                  ],
+                                ),
+                                Text('Price'),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Icon(Icons
+                                        .star_border), //Package for rating will be used here
+                                    Text('Image of product logo'),
+                                  ],
+                                ),
+                                Text('Rating'),
+                              ],
+                            ),
+                          ),
+//                          ListTile(
+//                            title: Text(
+//                              data[index].toString(),
+//                            ),
+//                            onTap: () {
+//                              Scaffold.of(context).showSnackBar(SnackBar(
+//                                content: Text("Sending Message"),
+//                              ));
+//                            },
+//                          ),
+                        ),
                       );
                     },
                   ),
