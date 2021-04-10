@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:waterdelivery/product_selection.dart';
 import 'constants.dart';
 import 'components/rounded_button.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-  final String title;
+  static const String id = "HomePage";
+
+  final String title = "Aqua";
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -63,7 +65,9 @@ class _HomePageState extends State<HomePage> {
                 height: 48.0,
               ),
               RoundedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ProductSelection.id);
+                },
                 buttonText: 'Proceed',
               )
             ],
